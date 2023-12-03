@@ -1,0 +1,9 @@
+package cn.edu.bupt.sa.kwic
+
+plugins {
+    id 'java'
+}
+
+application {
+    mainClassName = 'Kwic'
+}

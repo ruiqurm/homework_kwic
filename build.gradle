@@ -1,0 +1,15 @@
+plugins {
+    id 'java'
+}
+
+group = 'cn.edu.bupt.sa.kwic'
+version = '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+
+test {
+    useJUnitPlatform()
+}
