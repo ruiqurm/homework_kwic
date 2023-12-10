@@ -19,12 +19,18 @@ public class Kwic {
     Pipe<List<String>> pipe_shifter_to_sort = new Pipe<List<String>>();
     Pipe<List<String>> pipe_sort_to_sink = new Pipe<List<String>>();
 
-    FileSource source =
-        new FileSource(pipe_source_to_shifter, "input.txt");
+    FileSource source;
+    FileSink sink;
+    if (args.length >= 2) {
+      source = new FileSource(pipe_source_to_shifter, args[0]);
+      sink = new FileSink(pipe_sort_to_sink, args[1]);
+    } else {
+      source = new FileSource(pipe_source_to_shifter, "input.txt");
+      sink = new FileSink(pipe_sort_to_sink, "output.txt");
+    }
     CircularShiftFilter shifter =
         new CircularShiftFilter(pipe_source_to_shifter, pipe_shifter_to_sort);
     SortFilter sorter = new SortFilter(pipe_shifter_to_sort, pipe_sort_to_sink);
-    FileSink sink = new FileSink(pipe_sort_to_sink, "output.txt");
     // ConsoleSink sink = new ConsoleSink(pipe_sort_to_sink);
 
     pipe_source_to_shifter.open();
