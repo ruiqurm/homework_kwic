@@ -39,7 +39,7 @@ public class DataBaseSource extends Source<String>{
             connection = DriverManager.getConnection(this.jdbcUrl, this.username, this.password);
 
             // 编写SQL查询语句
-            String sqlQuery = "SELECT * FROM line_talbe";
+            String sqlQuery = "SELECT * FROM line_table";
 
             // 创建PreparedStatement对象
             preparedStatement = connection.prepareStatement(sqlQuery);

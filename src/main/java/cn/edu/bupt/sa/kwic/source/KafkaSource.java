@@ -15,7 +15,7 @@ public class KafkaSource extends Source<String>{
     private String groupIdConfig;
     private String keyDeserializerClassConfig;
     private String valueDeserializerClassConfig;
-    private  int maxPollRecordsConfig;
+    private int maxPollRecordsConfig;
     private int pollTimes;
 
 

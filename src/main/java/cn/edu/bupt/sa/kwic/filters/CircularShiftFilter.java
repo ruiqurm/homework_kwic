@@ -33,7 +33,7 @@ public class CircularShiftFilter extends Filter<String, List<String>> {
 
   @Override
   protected Optional<List<String>> filter(String input) {
-    System.out.println(input);
+    // System.out.println(input);
     List<String> sentence = spaceTokenzier(input);
     return Optional.of(circularShift(sentence));
   }

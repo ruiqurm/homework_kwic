@@ -28,13 +28,12 @@ public class FileSource extends Source<String> {
     try (BufferedReader reader = new BufferedReader(new FileReader(this.filename))) {
       String line;
       while ((line = reader.readLine()) != null) {
-        System.out.println(line);
+        // System.out.println(line);
         this.outPipe.put(line);
       }
     } catch (IOException e) {
       e.printStackTrace();
     }
     outPipe.close();
-
   }
 }

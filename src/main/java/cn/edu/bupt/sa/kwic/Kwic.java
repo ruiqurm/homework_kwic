@@ -3,6 +3,7 @@ package cn.edu.bupt.sa.kwic;
 import cn.edu.bupt.sa.kwic.filters.CircularShiftFilter;
 import cn.edu.bupt.sa.kwic.filters.SortFilter;
 import cn.edu.bupt.sa.kwic.sink.ConsoleSink;
+import cn.edu.bupt.sa.kwic.sink.FileSink;
 import cn.edu.bupt.sa.kwic.source.FileSource;
 
 import java.util.ArrayList;
@@ -19,11 +20,12 @@ public class Kwic {
     Pipe<List<String>> pipe_sort_to_sink = new Pipe<List<String>>();
 
     FileSource source =
-        new FileSource(pipe_source_to_shifter, "E:\\project\\kwic\\kwic\\input.txt");
+        new FileSource(pipe_source_to_shifter, "input.txt");
     CircularShiftFilter shifter =
         new CircularShiftFilter(pipe_source_to_shifter, pipe_shifter_to_sort);
     SortFilter sorter = new SortFilter(pipe_shifter_to_sort, pipe_sort_to_sink);
-    ConsoleSink sink = new ConsoleSink(pipe_sort_to_sink);
+    FileSink sink = new FileSink(pipe_sort_to_sink, "output.txt");
+    // ConsoleSink sink = new ConsoleSink(pipe_sort_to_sink);
 
     pipe_source_to_shifter.open();
     pipe_shifter_to_sort.open();

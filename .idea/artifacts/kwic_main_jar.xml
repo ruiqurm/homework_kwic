@@ -1,0 +1,16 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="kwic.main:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/kwic_main_jar</output-path>
+    <root id="archive" name="kwic.main.jar">
+      <element id="directory" name="META-INF">
+        <element id="file-copy" path="$PROJECT_DIR$/META-INF/MANIFEST.MF" />
+      </element>
+      <element id="module-output" name="kwic.main" />
+      <element id="extracted-dir" path="$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.github.luben/zstd-jni/1.4.9-1/7dc25611870925d32752c5b45d7d23ae01702f43/zstd-jni-1.4.9-1.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.apache.kafka/kafka-clients/2.8.1/cf4abb87e0d49670cf7a94e79eba14616be27418/kafka-clients-2.8.1.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.lz4/lz4-java/1.7.1/c4d931ef8ad2c9c35d65b231a33e61428472d0da/lz4-java-1.7.1.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.slf4j/slf4j-api/1.7.30/b5a4b6d16ab13e34a88fae84c35cd5d68cac922c/slf4j-api-1.7.30.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.xerial.snappy/snappy-java/1.1.8.1/d30aaf4d41d6ff0c760c8931d3b8dafc0293c91a/snappy-java-1.1.8.1.jar" path-in-jar="/" />
+    </root>
+  </artifact>
+</component>
