@@ -3,6 +3,8 @@ package cn.edu.bupt.sa.kwic.filters;
 import cn.edu.bupt.sa.kwic.Pipe;
 
 import java.util.Optional;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 public abstract class Filter<INPUT, OUTPUT> implements Runnable {
 

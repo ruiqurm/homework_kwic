@@ -3,6 +3,8 @@ package cn.edu.bupt.sa.kwic.filters;
 import cn.edu.bupt.sa.kwic.Pipe;
 
 import java.util.*;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 public class CircularShiftFilter extends Filter<String, List<String>> {
 
@@ -34,6 +36,11 @@ public class CircularShiftFilter extends Filter<String, List<String>> {
   @Override
   protected Optional<List<String>> filter(String input) {
     // System.out.println(input);
+    Pattern pattern = Pattern.compile("\\b\\w+\\b");
+    Matcher matcher = pattern.matcher(input);
+    if (!matcher.find()) {
+      return Optional.empty();
+    }
     List<String> sentence = spaceTokenzier(input);
     return Optional.of(circularShift(sentence));
   }
